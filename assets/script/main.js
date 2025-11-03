@@ -9,6 +9,13 @@ document.getElementById("prevBtn").onclick = () =>
 
 window.addEventListener("load", () => {
     setTimeout(() => {
+        const year = document.getElementById("year");
+        year.innerText = new Date().getFullYear();
+    }, 50);
+});
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
         if (menuBtn && mobileMenu) {
