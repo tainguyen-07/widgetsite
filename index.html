@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Widget Site</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/htmlincludejs"></script>
+    <script type="module" src="https://unpkg.com/@github/include-fragment-element@6.4.1"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <include src="./assets/pages/header.html"></include>
+    <include-fragment src="./assets/pages/header.html"></include-fragment>
 
     <div class="home min-h-screen flex flex-col justify-center items-center bg-white text-center font-mono">
         <h1 class="text-4xl font-bold">Welcome to Widget Site</h1>
@@ -62,7 +62,7 @@
         </p>
     </div>
 
-    <include src="./assets/pages/footer.html"></include>
+    <include-fragment src="./assets/pages/footer.html"></include-fragment>
 
     <script src="./assets/script/main.js"></script>
 </body>
