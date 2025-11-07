@@ -7,21 +7,19 @@ document.getElementById("nextBtn").onclick = () =>
 document.getElementById("prevBtn").onclick = () =>
     slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
 
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        const year = document.getElementById("year");
-        year.innerText = new Date().getFullYear();
-    }, 50);
+document.querySelectorAll("include-fragment").forEach(frag => {
+    frag.addEventListener("load", () => {
+        initPage();
+    });
 });
 
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
-    }, 50);
-});
+function initPage() {
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+        menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
+    }
+}
